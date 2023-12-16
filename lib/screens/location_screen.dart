@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather_today_completed/screens/loading_screen.dart';
 import 'package:weather_today_completed/utils/constants.dart';
 import '../utils/custom_paint.dart';
 import 'city_screen.dart';
@@ -84,7 +85,15 @@ class LocationScreenState extends State<LocationScreen> {
                       ),
                     ),
                     GestureDetector(
-                      onTap: () async {},
+                      onTap: () async {
+                        final cityName = Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const LoadingScreen(
+                                    ctyName: 'Dhaka',
+                                  )),
+                        );
+                      },
                       child: Image.asset(
                         'images/ic_current_location.png',
                         width: 32.0,
@@ -119,11 +128,11 @@ class LocationScreenState extends State<LocationScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     const SizedBox(width: 16.0),
-                    Image.asset(
-                      'images/ic_location_pin.png',
-                      width: 24.0,
-                      height: 24.0,
-                    ),
+                  Image.asset(
+                    'images/ic_location_pin.png',
+                    width: 24.0,
+                    height: 24.0,
+                  ),
                     const SizedBox(width: 10),
                     Padding(
                       padding: const EdgeInsets.only(right: 15.0),
