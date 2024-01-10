@@ -91,7 +91,8 @@ class LocationScreenState extends State<LocationScreen> {
                           MaterialPageRoute(
                               builder: (context) => const LoadingScreen(
                                     ctyName: 'Dhaka',
-                                  )),
+                                  ),
+                          ),
                         );
                       },
                       child: Image.asset(
@@ -128,11 +129,11 @@ class LocationScreenState extends State<LocationScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     const SizedBox(width: 16.0),
-                  Image.asset(
-                    'images/ic_location_pin.png',
-                    width: 24.0,
-                    height: 24.0,
-                  ),
+                    Image.asset(
+                      'images/ic_location_pin.png',
+                      width: 24.0,
+                      height: 24.0,
+                    ),
                     const SizedBox(width: 10),
                     Padding(
                       padding: const EdgeInsets.only(right: 15.0),
